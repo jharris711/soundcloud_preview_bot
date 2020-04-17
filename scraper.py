@@ -8,7 +8,6 @@ from logics.check_for_space import checkForSpaceAndRemove
 from user_input.get_artist import getArtist
 from user_input.join_or_dash import joinOrDash
 from user_input.search_again import searchAgain
-from fake_user.random_ip import randomIp
 from banner_art.print_art import printArt
 
 def scrapeAndPlay():

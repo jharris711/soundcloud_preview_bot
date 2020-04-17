@@ -1,4 +1,3 @@
-  
 from selenium import webdriver
 from .check_status import checkStatusCode
 from fake_user.fake_user import fakeUserWait
