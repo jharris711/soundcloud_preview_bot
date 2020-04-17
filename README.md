@@ -5,8 +5,8 @@ Requires the geckodriver to be placed in the root dir to be able to work. (https
 
 Run with:
 
-'''
+"""
 python3 scraper.py
-'''
+"""
 
 Program uses Selenium and Python 3 to allow user to play and preview up to 9 songs on the desired artists soundcloud page.
