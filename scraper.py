@@ -1,15 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
 from time import sleep
+from random import choice
 from logics.check_status import checkStatusCode
 from logics.bot import play_song
 from logics.check_for_space import checkForSpaceAndRemove
 from user_input.get_artist import getArtist
 from user_input.join_or_dash import joinOrDash
 from user_input.search_again import searchAgain
-
+from banner_art.print_art import printArt
 
 def scrapeAndPlay():
+    title = "SoundCloud Play Bot"
+    printArt(title, 'white')
     #Start program loop:
     the_program_is_running = True
     while the_program_is_running:
@@ -68,8 +71,6 @@ def scrapeAndPlay():
                 the_program_is_running = False
                 print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                 print("See Ya!")
-
-
 
 
 
