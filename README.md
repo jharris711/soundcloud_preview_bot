@@ -1,7 +1,7 @@
 # soundcloud_preview_bot
 Python 3 based SoundCloud Play Bot
 
-Requires the geckodriver to be placed in the root dir to be able to work. [Download Gecko Driver Here](https://github.com/mozilla/geckodriver/releases)
+Requires the geckodriver to be placed in the root dir with scraper.py to be able to work. [Download Gecko Driver Here](https://github.com/mozilla/geckodriver/releases)
 
 Run with:
 
