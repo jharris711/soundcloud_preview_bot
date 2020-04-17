@@ -8,6 +8,7 @@ from logics.check_for_space import checkForSpaceAndRemove
 from user_input.get_artist import getArtist
 from user_input.join_or_dash import joinOrDash
 from user_input.search_again import searchAgain
+from fake_user.random_ip import randomIp
 from banner_art.print_art import printArt
 
 def scrapeAndPlay():
@@ -26,20 +27,21 @@ def scrapeAndPlay():
         url = f'https://soundcloud.com/{artist}'
         #Make http request to artist's Soundcloud with Requests package:
         response = requests.request("GET", url, headers=headers)
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        print(f"Now scraping: {url}")
-        print(" ")
         #Send response's text through Beautiful Soup:
         soup = BeautifulSoup(response.text, "html.parser")
         #Save the name of all visible list items to results:
         track_names = soup.find_all("h2", {'itemprop': "name"})
+        #Get list of ip addresses for proxy:
+        
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        print(f"Gathering songs from: {url}")
         #Set list as count for while loop:
         count = len(track_names)
         while count > 0:
             #Iterate the track names list:
             for t in track_names:
                 track_href = t.find('a')['href']
-                url = f"https://www.soundcloud.com{track_href}"
+                url = f"http://www.soundcloud.com{track_href}"
                 #Check url for status = 200:
                 if checkStatusCode(url):
                     try:
@@ -51,10 +53,10 @@ def scrapeAndPlay():
                 #Count messages:
                 if count == 1:
                     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-                    print("Playing the last song on the page.")
+                    print("Playing the last song.")
                 elif count == 0:
                     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-                    print("Done playing songs on this page.")
+                    print("Done playing songs.")
                 else:
                     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                     print(f"{count} songs left.")

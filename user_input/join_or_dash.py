@@ -3,13 +3,14 @@ def joinOrDash():
     print("Join name with or without dash in url?")
     res = input("'1 for dash/0 for no dash': ")
     proper_answer = False
-    while proper_answer:
+    while proper_answer == False:
         if res == "1" or res == "0":
             proper_answer = True
             return res
         else:
             print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
             print("That's not an option, fam...")
+            res = input("'1 for dash/0 for no dash': ")
 
 
 if __name__ == "__main__":

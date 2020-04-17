@@ -21,6 +21,7 @@ def getArtist():
         else:
             print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
             print("That's not an option, fam...")
+            artist = input("Enter Artist's Name: ")
 
 
 

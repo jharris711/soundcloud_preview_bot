@@ -16,6 +16,7 @@ def searchAgain():
         else:
             print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
             print("That's not an option!")
+            answer = input("Y for Yes/N for No: ")
 
 
 
